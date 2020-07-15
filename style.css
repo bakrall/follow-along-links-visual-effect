@@ -1,0 +1,28 @@
+html {
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.menu {
+	padding: 0;
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.menu a {
+	display: inline-block;
+	padding: 5px;
+	margin: 0 20px;
+}
+
+.wrapper {
+	max-width: 500px;
+	margin: 0 auto;
+	line-height: 1.5;
+}
