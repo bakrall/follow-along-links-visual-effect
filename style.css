@@ -7,6 +7,31 @@ html {
   box-sizing: inherit;
 }
 
+/* gradient background: https://www.youtube.com/watch?v=1q6papqTEqI */
+
+body {
+	height: 100vh;
+	margin: 0;
+	background: linear-gradient(to top right, #ff6f69 50%, #ffcc5c 50%);
+}
+
+/* 
+Height 100vh on body made a vertical scrollbar appear (even though body has margin 0). It was due to the top margin on ul element.
+To prevent this top-margin collapse we use before pseudo-element.
+Resources:
+https://www.bennadel.com/blog/3391-margin-collapsing-causes-unexpected-scrollbar-with-100vh-body-in-webkit.htm
+http://nicolasgallagher.com/micro-clearfix-hack/
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing
+
+Another solution would be to give on body display:flex; Display flex prevents the margins from collapsing. 
+https://www.smashingmagazine.com/2019/07/margins-in-css/
+*/
+
+body::before {
+	content: '';
+	display: table;
+}
+
 .menu {
 	padding: 0;
 	list-style: none;
